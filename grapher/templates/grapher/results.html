@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+<title>Blackbody Modeller</title>
+<meta charset="utf-8">
+<script type="text/javascript" src="{% static 'grapher/plotly-latest.min.js' %}"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #40f152;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #FF69B4;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #281bdd;
+  color: black;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column.side, .column.middle {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Blackbody Modeller</h1>
+  <p>Supply the rest-frame temperature and Radius and the model will be displayed</p>
+</div>
+
+<div class="topnav">
+  <a href="{% url 'input' %}">Home</a>
+</div>
+
+
+<div class="column middle">
+    Temperature = <strong>{{ temp }}</strong> keV |
+    Radius = <strong>{{rad}}</strong> cm |
+    Redshift = <strong>{{redshift}}</strong>
+    <div id="tester" style="width:600px;height:250px;"></div>
+    <script>
+
+  var layout = {
+        autosize: false,
+  width: 1000,
+  height: 700,
+  margin: {
+    l: 100,
+    r: 50,
+    b: 100,
+    t: 100,
+    pad:10
+  },
+  title: {
+    text:'',
+    font: {
+      family: 'Courier New, monospace',
+      size: 24
+    },
+    xref: 'paper',
+    x: 0.05,
+  },
+  xaxis: {
+    title: {
+      text: 'Energy (keV)',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Flux (mJy)',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    }
+  }
+};
+
+
+
+    TESTER = document.getElementById('tester');
+    Plotly.plot( TESTER, [{
+    x: {{Xaxis}},
+    y: {{Yaxis}} }], layout );
+    </script>
+</div>
+
+
+</body>
+</html>
