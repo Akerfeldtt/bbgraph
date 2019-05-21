@@ -165,5 +165,5 @@ def imagedisplay(request):
         # getval = task.get()
         # progress = task.state
         i = inspect()
-        a=1
+        a=12
         return render_to_response('grapher/png_template.html', { 'image': IMAGE,'apple':a})
