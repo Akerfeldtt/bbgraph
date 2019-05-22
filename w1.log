@@ -1,8 +1,0 @@
-[2019-05-14 14:30:27,926: INFO/MainProcess] Connected to amqp://guest:**@127.0.0.1:5672//
-[2019-05-14 14:30:27,940: INFO/MainProcess] mingle: searching for neighbors
-[2019-05-14 14:30:28,966: INFO/MainProcess] mingle: all alone
-[2019-05-14 14:30:28,998: WARNING/MainProcess] /home/samemery/PycharmProjects/bbgraph/venv/lib/python3.7/site-packages/celery/fixups/django.py:202: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
-  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
-[2019-05-14 14:30:28,998: INFO/MainProcess] w1@samemery-Lenovo-ideapad-330S-14IKB ready.
-[2019-05-14 14:31:36,542: INFO/MainProcess] Received task: grapher.tasks.plotgraph[fbca3e51-0062-4de0-8e98-cd60a04054f6]  
-[2019-05-14 14:32:05,497: INFO/MainProcess] Received task: grapher.tasks.plotgraph[731cb4b5-547f-4b14-8d27-fb7181f79734]  
