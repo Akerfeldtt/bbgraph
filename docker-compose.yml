@@ -8,11 +8,14 @@ services:
       - .:/code
     ports:
       - "8000:8000"
+
   celery:
     build: .
     command: ['celery', '-A', 'bbgraph', 'worker', '-l', 'INFO']
     volumes:
       - .:/code
+      - ./static:/static
+
     depends_on:
       - redis
 
@@ -26,5 +29,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./static:/static
     depends_on:
       - web

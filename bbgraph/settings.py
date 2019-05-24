@@ -25,7 +25,7 @@ SECRET_KEY = 'x=s8p$o@!-1qi&i#x@x&-9kdy0&wjoj8ei3ryp1l3t872q^^&j'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0' ]
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1']
 
 
 # Application definition
@@ -123,3 +123,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 CELERY_RESULT_BACKEND = 'django-db'
 CELERY_CACHE_BACKEND = 'django-cache'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+    # os.path.join(BASE_DIR, "static"),
+)
