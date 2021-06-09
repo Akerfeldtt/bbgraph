@@ -5,7 +5,7 @@ billiard==3.6.0.0
 celery==4.3.0
 coverage==4.5.3
 cycler==0.10.0
-Django==2.2.8
+Django==2.2.22
 django-celery-results==1.0.4
 kiwisolver==1.1.0
 kombu==4.5.0
