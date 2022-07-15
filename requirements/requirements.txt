@@ -6,7 +6,7 @@ celery==4.3.0
 coverage==4.5.3
 cycler==0.10.0
 Django==2.2.8
-django-celery-results==1.0.4
+django-celery-results==2.4.0
 kiwisolver==1.1.0
 kombu==4.5.0
 matplotlib==3.0.3
